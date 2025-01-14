@@ -22,13 +22,14 @@
     // 监听dock加载完毕
     whenElementExist('#dockRight .dock__items .dock__item--pin').then((pin) => {
         // 这里可以添加多个字号
-        let vtext = "Of";
+        // let vtext = "Of";
+        let vtext = "🌀";
         addButton(vtext, pin);
     });
 
     // 设置字体大小
     function addButton(vtext, pin) {
-        const buttonString = `<span class="dock__item ariaLabel" aria-label="${showTips ? 'filter outline' : ''}">Of</span>`;
+        const buttonString = `<span class="dock__item ariaLabel" aria-label="${showTips ? 'filter outline' : ''}">`+vtext+`</span>`;
         // 创建一个 DocumentFragment
         const fragment = document.createRange().createContextualFragment(buttonString);
         // 提取 span 元素
